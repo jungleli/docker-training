@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  cool-ui:
+    build: ./cool-ui
+    ports:
+      - "8080:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  server:
+    build: ./server
+    networks:
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:

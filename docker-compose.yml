@@ -4,16 +4,17 @@ services:
   cool-ui:
     build: ./cool-ui
     ports:
-      - "8080:80"
+      - "80:80"
     networks:
       - front-tier
       - back-tier
 
   server:
     build: ./server
+    ports:
+      - "3000:3000"
     networks:
       - back-tier
-
 networks:
   front-tier:
   back-tier:
